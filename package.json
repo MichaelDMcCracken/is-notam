@@ -1,0 +1,17 @@
+{
+  "name": "is-notam",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests/index.js",
+    "test:watch": "nodemon --watch index.js --watch tests/index.js --exec 'npm run test || true'"
+  },
+  "author": "Michael McCracken",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.0.4",
+    "nodemon": "^1.17.1"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "expr": true,
+  "node": true,
+  "asi": true,
+  "globals": {
+    "it": true,
+    "context": true
+  }
+}
