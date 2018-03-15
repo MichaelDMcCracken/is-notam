@@ -19,7 +19,6 @@ describe("#isNotam()",function(){
     assertNotam('!MYR 12/046 (KMYR A0660/17) MYR TWY A2, A3 CLSD 1712172055-1804012200',true)
     assertNotam('!MYR 12/046 (KMYR A0660/17) MYR TWY A2, A3 CLSD 1712172055-PERM',true)
     assertNotam('!MYR 12/046 (KMYR A0660/17) MYR TWY A2, A3 CLSD 1712172055-1804012200EST',true)
-
   })
 
   context("invalidates NOTAMs with an",function(){

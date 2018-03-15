@@ -29,29 +29,12 @@ var tests = [
 
 
   function (str) {
-    var result = false
-    var newStr = ""
-
-    if (str.endsWith("-PERM")) {
-      newStr = str.substring(str.length-15, str.length - 5)
-
-    } else if (newStr.substring(str.length-4,str.length-1).includes("ST")) {
-      newStr = newStr.substring(str.length-14, str.length-4)
-
-    } else {
-      newStr = newStr.substring(str.length-22, str.length-1)
-      var strArr = newStr.split("-")
-      strArr.forEach( function(time) {
-        var re = new RegExp('[0-9]{10}')
-        if (re.test(time) == true) {
-          result = true
-        } else {
-          result = false
-        }
-
-      })
+    var found = str.match(/([\d]{10})-([\d]{10}|PERM)([\w]{3})?/)
+    console.log(found)
+    if (!found){
+      return false
     }
-    return result
+    return true
   }
 
 
