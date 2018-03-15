@@ -25,6 +25,19 @@ var tests = [
     return result
   },
 
+  // check date + time
+
+
+  function (str) {
+    var found = str.match(/([\d]{10})-([\d]{10}|PERM)([\w]{3})?/)
+    console.log(found)
+    if (!found){
+      return false
+    }
+    return true
+  }
+
+
 ]
 
 function isNotam(str){

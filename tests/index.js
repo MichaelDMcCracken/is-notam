@@ -17,7 +17,8 @@ describe("#isNotam()",function(){
   context("validates valid NOTAM",function(){
     assertNotam('!ATL 03/080 ATL RWY 10/28 CLSD 1803120330-1803120700',true)
     assertNotam('!MYR 12/046 (KMYR A0660/17) MYR TWY A2, A3 CLSD 1712172055-1804012200',true)
-
+    assertNotam('!MYR 12/046 (KMYR A0660/17) MYR TWY A2, A3 CLSD 1712172055-PERM',true)
+    assertNotam('!MYR 12/046 (KMYR A0660/17) MYR TWY A2, A3 CLSD 1712172055-1804012200EST',true)
   })
 
   context("invalidates NOTAMs with an",function(){
@@ -32,6 +33,10 @@ describe("#isNotam()",function(){
 
     it("fifth char not a space",function(){
       expect(isNotam("!LHZDERPARRYANSUPIDSDFAOSDIJFA")).to.be.false
+    })
+
+    it("invalid time", function(){
+      expect(isNotam("!ATL 03/080 ATL RWY 10/28 CLSD 1803130-18239812PERM'")).to.be.false
     })
 
   })
